@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_deactivate",
+  "name": "Lightsaber Deactivation",
+  "type": "item_animation",
+  
+  "animation": {
+    "length": 0.4,
+    "loop": false,
+    
+    "keyframes": {
+      "blade_scale": [
+        { "time": 0.0, "value": [1.0, 1.0, 1.0], "easing": "easeIn" },
+        { "time": 0.15, "value": [1.0, 0.7, 1.0], "easing": "easeIn" },
+        { "time": 0.3, "value": [1.0, 0.2, 1.0], "easing": "easeIn" },
+        { "time": 0.4, "value": [1.0, 0.0, 1.0] }
+      ],
+      
+      "blade_opacity": [
+        { "time": 0.0, "value": 1.0 },
+        { "time": 0.25, "value": 0.5 },
+        { "time": 0.4, "value": 0.0 }
+      ],
+      
+      "glow_intensity": [
+        { "time": 0.0, "value": 1.0 },
+        { "time": 0.2, "value": 0.5 },
+        { "time": 0.4, "value": 0.0 }
+      ],
+      
+      "light_radius": [
+        { "time": 0.0, "value": 8.0 },
+        { "time": 0.4, "value": 0.0 }
+      ]
+    },
+    
+    "events": [
+      { "time": 0.0, "type": "sound", "sound": "deactivate" },
+      { "time": 0.0, "type": "stop_particles", "effect": "idle" },
+      { "time": 0.4, "type": "stop_light" }
+    ]
+  }
+}

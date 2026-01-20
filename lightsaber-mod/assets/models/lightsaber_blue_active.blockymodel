@@ -1,0 +1,157 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_blue_active",
+  "name": "Blue Lightsaber Active",
+  "type": "item_model",
+  
+  "meta": {
+    "format_version": "4.5",
+    "creation_time": 1737417600,
+    "model_format": "hytale_item",
+    "box_uv": false
+  },
+  
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  
+  "elements": [
+    {
+      "name": "hilt_base",
+      "from": [-1, 0, -1],
+      "to": [1, 3, 1],
+      "faces": {
+        "north": { "uv": [0, 0, 2, 3], "texture": "#hilt" },
+        "east": { "uv": [2, 0, 4, 3], "texture": "#hilt" },
+        "south": { "uv": [4, 0, 6, 3], "texture": "#hilt" },
+        "west": { "uv": [6, 0, 8, 3], "texture": "#hilt" },
+        "up": { "uv": [0, 3, 2, 5], "texture": "#hilt" },
+        "down": { "uv": [2, 3, 4, 5], "texture": "#hilt" }
+      }
+    },
+    {
+      "name": "hilt_grip",
+      "from": [-0.75, 3, -0.75],
+      "to": [0.75, 8, 0.75],
+      "faces": {
+        "north": { "uv": [8, 0, 9.5, 5], "texture": "#hilt" },
+        "east": { "uv": [9.5, 0, 11, 5], "texture": "#hilt" },
+        "south": { "uv": [11, 0, 12.5, 5], "texture": "#hilt" },
+        "west": { "uv": [12.5, 0, 14, 5], "texture": "#hilt" },
+        "up": { "uv": [8, 5, 9.5, 6.5], "texture": "#hilt" },
+        "down": { "uv": [9.5, 5, 11, 6.5], "texture": "#hilt" }
+      }
+    },
+    {
+      "name": "hilt_emitter",
+      "from": [-0.5, 8, -0.5],
+      "to": [0.5, 10, 0.5],
+      "faces": {
+        "north": { "uv": [14, 0, 15, 2], "texture": "#hilt" },
+        "east": { "uv": [15, 0, 16, 2], "texture": "#hilt" },
+        "south": { "uv": [14, 2, 15, 4], "texture": "#hilt" },
+        "west": { "uv": [15, 2, 16, 4], "texture": "#hilt" },
+        "up": { "uv": [14, 4, 15, 5], "texture": "#hilt" }
+      }
+    },
+    {
+      "name": "blade_core",
+      "from": [-0.15, 10, -0.15],
+      "to": [0.15, 42, 0.15],
+      "faces": {
+        "north": { "uv": [0, 0, 0.3, 32], "texture": "#blade_core" },
+        "east": { "uv": [0.3, 0, 0.6, 32], "texture": "#blade_core" },
+        "south": { "uv": [0.6, 0, 0.9, 32], "texture": "#blade_core" },
+        "west": { "uv": [0.9, 0, 1.2, 32], "texture": "#blade_core" },
+        "up": { "uv": [0, 32, 0.3, 32.3], "texture": "#blade_core" }
+      },
+      "renderType": "emissive",
+      "emissiveIntensity": 1.0
+    },
+    {
+      "name": "blade_inner_glow",
+      "from": [-0.35, 10, -0.35],
+      "to": [0.35, 42, 0.35],
+      "faces": {
+        "north": { "uv": [0, 0, 0.7, 32], "texture": "#blade" },
+        "east": { "uv": [0.7, 0, 1.4, 32], "texture": "#blade" },
+        "south": { "uv": [1.4, 0, 2.1, 32], "texture": "#blade" },
+        "west": { "uv": [2.1, 0, 2.8, 32], "texture": "#blade" },
+        "up": { "uv": [0, 32, 0.7, 32.7], "texture": "#blade" }
+      },
+      "renderType": "additive",
+      "opacity": 0.85
+    },
+    {
+      "name": "blade_outer_glow",
+      "from": [-0.6, 10, -0.6],
+      "to": [0.6, 42, 0.6],
+      "faces": {
+        "north": { "uv": [0, 0, 1.2, 32], "texture": "#glow" },
+        "east": { "uv": [1.2, 0, 2.4, 32], "texture": "#glow" },
+        "south": { "uv": [2.4, 0, 3.6, 32], "texture": "#glow" },
+        "west": { "uv": [3.6, 0, 4.8, 32], "texture": "#glow" },
+        "up": { "uv": [0, 32, 1.2, 33.2], "texture": "#glow" }
+      },
+      "renderType": "additive",
+      "opacity": 0.4,
+      "blur": true
+    },
+    {
+      "name": "blade_tip",
+      "from": [-0.1, 42, -0.1],
+      "to": [0.1, 44, 0.1],
+      "faces": {
+        "north": { "uv": [0, 0, 0.2, 2], "texture": "#blade_core" },
+        "east": { "uv": [0.2, 0, 0.4, 2], "texture": "#blade_core" },
+        "south": { "uv": [0.4, 0, 0.6, 2], "texture": "#blade_core" },
+        "west": { "uv": [0.6, 0, 0.8, 2], "texture": "#blade_core" },
+        "up": { "uv": [0, 2, 0.2, 2.2], "texture": "#blade_core" }
+      },
+      "renderType": "emissive",
+      "emissiveIntensity": 1.0
+    }
+  ],
+  
+  "textures": {
+    "hilt": "textures/items/lightsaber_hilt.png",
+    "blade": "textures/items/blade_blue.png",
+    "blade_core": "textures/items/blade_core_white.png",
+    "glow": "textures/effects/glow_blue.png"
+  },
+  
+  "attachPoints": {
+    "blade_base": [0, 10, 0],
+    "blade_tip": [0, 44, 0],
+    "blade_center": [0, 27, 0]
+  },
+  
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [0, -90, 25],
+      "translation": [1.13, 3.2, 1.13],
+      "scale": [0.68, 0.68, 0.68]
+    },
+    "thirdperson_righthand": {
+      "rotation": [0, -90, 55],
+      "translation": [0, 4.0, 0.5],
+      "scale": [0.85, 0.85, 0.85]
+    },
+    "ground": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 2, 0],
+      "scale": [0.5, 0.5, 0.5]
+    }
+  },
+  
+  "lighting": {
+    "pointLight": {
+      "position": "blade_center",
+      "color": [0, 100, 255],
+      "intensity": 1.2,
+      "radius": 8,
+      "castShadows": true
+    }
+  }
+}

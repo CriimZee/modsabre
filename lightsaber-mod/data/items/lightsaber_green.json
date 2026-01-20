@@ -1,0 +1,121 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_green",
+  "displayName": "Sabre Laser Vert",
+  "description": "Un sabre laser vert lumineux. Symbole de sagesse et d'harmonie avec la Force.",
+  "category": "weapons",
+  "subcategory": "melee",
+  "rarity": "legendary",
+  
+  "model": {
+    "inactive": "models/lightsaber_hilt.blockymodel",
+    "active": "models/lightsaber_green_active.blockymodel"
+  },
+  
+  "textures": {
+    "hilt": "textures/items/lightsaber_hilt.png",
+    "blade": "textures/items/blade_green.png",
+    "glow": "textures/effects/glow_green.png"
+  },
+  
+  "stats": {
+    "damage": 14,
+    "attackSpeed": 1.9,
+    "durability": -1,
+    "reach": 3.5
+  },
+  
+  "behavior": "behaviors/lightsaber_behavior.json",
+  
+  "states": {
+    "default": "inactive",
+    "available": ["inactive", "active"]
+  },
+  
+  "lightEmission": {
+    "enabled": true,
+    "condition": "state == active",
+    "color": [0, 255, 100],
+    "intensity": 1.2,
+    "radius": 8,
+    "flicker": {
+      "enabled": true,
+      "frequency": 0.1,
+      "amplitude": 0.15
+    }
+  },
+  
+  "particles": {
+    "idle": {
+      "effect": "effects/lightsaber_glow.json",
+      "condition": "state == active",
+      "color": [0, 255, 120],
+      "emissionRate": 30
+    },
+    "swing": {
+      "effect": "effects/lightsaber_trail.json",
+      "color": [0, 255, 120],
+      "trailLength": 0.5
+    },
+    "hit": {
+      "effect": "effects/lightsaber_clash.json",
+      "color": [255, 255, 255],
+      "sparks": true
+    }
+  },
+  
+  "sounds": {
+    "activate": {
+      "sound": "sounds/lightsaber_on.ogg",
+      "volume": 0.8,
+      "pitch": 1.05
+    },
+    "deactivate": {
+      "sound": "sounds/lightsaber_off.ogg",
+      "volume": 0.8,
+      "pitch": 1.05
+    },
+    "idle": {
+      "sound": "sounds/lightsaber_hum.ogg",
+      "volume": 0.4,
+      "pitch": 1.05,
+      "loop": true,
+      "condition": "state == active"
+    },
+    "swing": {
+      "sound": "sounds/lightsaber_swing.ogg",
+      "volume": 0.7,
+      "pitchVariance": 0.2
+    },
+    "hit": {
+      "sound": "sounds/lightsaber_hit.ogg",
+      "volume": 0.9,
+      "pitch": 1.0
+    },
+    "clash": {
+      "sound": "sounds/lightsaber_clash.ogg",
+      "volume": 1.0,
+      "pitch": 1.0,
+      "condition": "target.item.type contains lightsaber"
+    }
+  },
+  
+  "animations": {
+    "activate": "animations/lightsaber_activate.blockyanim",
+    "deactivate": "animations/lightsaber_deactivate.blockyanim",
+    "idle_active": "animations/lightsaber_idle_hum.blockyanim",
+    "attack_1": "animations/lightsaber_slash_1.blockyanim",
+    "attack_2": "animations/lightsaber_slash_2.blockyanim",
+    "attack_3": "animations/lightsaber_thrust.blockyanim",
+    "block": "animations/lightsaber_block.blockyanim"
+  },
+  
+  "combatMechanics": {
+    "canBlock": true,
+    "blockDamageReduction": 0.85,
+    "canDeflectProjectiles": true,
+    "deflectChance": 0.65,
+    "comboEnabled": true,
+    "maxCombo": 3
+  }
+}

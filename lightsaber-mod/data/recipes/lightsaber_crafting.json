@@ -1,0 +1,141 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_crafting",
+  "name": "Lightsaber Crafting Recipes",
+  
+  "recipes": [
+    {
+      "id": "lightsaber_hilt",
+      "type": "shaped",
+      "station": "advanced_workbench",
+      "pattern": [
+        " I ",
+        "IGI",
+        " I "
+      ],
+      "key": {
+        "I": { "item": "hytale:iron_ingot" },
+        "G": { "item": "hytale:gold_ingot" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_hilt",
+        "count": 1
+      }
+    },
+    {
+      "id": "lightsaber_blue",
+      "type": "shaped",
+      "station": "advanced_workbench",
+      "pattern": [
+        " C ",
+        " H ",
+        " E "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_blue" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "E": { "item": "hytale:energy_core" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_blue",
+        "count": 1
+      }
+    },
+    {
+      "id": "lightsaber_green",
+      "type": "shaped",
+      "station": "advanced_workbench",
+      "pattern": [
+        " C ",
+        " H ",
+        " E "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_green" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "E": { "item": "hytale:energy_core" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_green",
+        "count": 1
+      }
+    },
+    {
+      "id": "lightsaber_red",
+      "type": "shaped",
+      "station": "advanced_workbench",
+      "pattern": [
+        " C ",
+        " H ",
+        " E "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_red" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "E": { "item": "hytale:energy_core" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_red",
+        "count": 1
+      }
+    },
+    {
+      "id": "lightsaber_purple",
+      "type": "shaped",
+      "station": "advanced_workbench",
+      "pattern": [
+        " C ",
+        " H ",
+        " E "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_purple" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "E": { "item": "hytale:energy_core" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_purple",
+        "count": 1
+      }
+    },
+    {
+      "id": "lightsaber_yellow",
+      "type": "shaped",
+      "station": "advanced_workbench",
+      "pattern": [
+        " C ",
+        " H ",
+        " E "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_yellow" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "E": { "item": "hytale:energy_core" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_yellow",
+        "count": 1
+      }
+    }
+  ],
+  
+  "lootTables": {
+    "kyber_crystals": {
+      "pools": [
+        {
+          "rolls": 1,
+          "entries": [
+            { "item": "lightsaber_mod:kyber_crystal_blue", "weight": 30 },
+            { "item": "lightsaber_mod:kyber_crystal_green", "weight": 30 },
+            { "item": "lightsaber_mod:kyber_crystal_yellow", "weight": 20 },
+            { "item": "lightsaber_mod:kyber_crystal_red", "weight": 15 },
+            { "item": "lightsaber_mod:kyber_crystal_purple", "weight": 5 }
+          ],
+          "conditions": [
+            { "type": "location", "biome": ["crystal_caves", "ancient_ruins", "deep_underground"] }
+          ]
+        }
+      ]
+    }
+  }
+}

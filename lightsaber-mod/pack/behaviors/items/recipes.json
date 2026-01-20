@@ -1,0 +1,125 @@
+{
+  "format_version": 1,
+  "recipes": {
+    "lightsaber_hilt": {
+      "type": "crafting_shaped",
+      "pattern": [
+        " I ",
+        "IGI",
+        " I "
+      ],
+      "key": {
+        "I": { "item": "hytale:iron_ingot" },
+        "G": { "item": "hytale:gold_ingot" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_hilt",
+        "count": 1
+      },
+      "category": "equipment"
+    },
+    
+    "lightsaber_blue": {
+      "type": "crafting_shaped",
+      "pattern": [
+        " C ",
+        " H ",
+        " B "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_blue" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "B": { "item": "hytale:battery" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_blue",
+        "count": 1
+      },
+      "category": "weapons"
+    },
+    
+    "lightsaber_green": {
+      "type": "crafting_shaped",
+      "pattern": [
+        " C ",
+        " H ",
+        " B "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_green" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "B": { "item": "hytale:battery" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_green",
+        "count": 1
+      },
+      "category": "weapons"
+    },
+    
+    "lightsaber_red": {
+      "type": "crafting_shaped",
+      "pattern": [
+        " C ",
+        " H ",
+        " B "
+      ],
+      "key": {
+        "C": { "item": "lightsaber_mod:kyber_crystal_red" },
+        "H": { "item": "lightsaber_mod:lightsaber_hilt" },
+        "B": { "item": "hytale:battery" }
+      },
+      "result": {
+        "item": "lightsaber_mod:lightsaber_red",
+        "count": 1
+      },
+      "category": "weapons"
+    },
+    
+    "lightsaber_purple": {
+      "type": "crafting_shapeless",
+      "ingredients": [
+        { "item": "lightsaber_mod:kyber_crystal_blue" },
+        { "item": "lightsaber_mod:kyber_crystal_red" },
+        { "item": "lightsaber_mod:lightsaber_hilt" },
+        { "item": "hytale:battery" }
+      ],
+      "result": {
+        "item": "lightsaber_mod:lightsaber_purple",
+        "count": 1
+      },
+      "category": "weapons"
+    },
+    
+    "lightsaber_yellow": {
+      "type": "crafting_shapeless",
+      "ingredients": [
+        { "item": "lightsaber_mod:kyber_crystal_green" },
+        { "item": "hytale:gold_ingot" },
+        { "item": "hytale:gold_ingot" },
+        { "item": "lightsaber_mod:lightsaber_hilt" },
+        { "item": "hytale:battery" }
+      ],
+      "result": {
+        "item": "lightsaber_mod:lightsaber_yellow",
+        "count": 1
+      },
+      "category": "weapons"
+    },
+    
+    "lightsaber_white": {
+      "type": "crafting_shapeless",
+      "ingredients": [
+        { "item": "lightsaber_mod:kyber_crystal_red" },
+        { "item": "hytale:purification_essence" },
+        { "item": "lightsaber_mod:lightsaber_hilt" },
+        { "item": "hytale:battery" }
+      ],
+      "result": {
+        "item": "lightsaber_mod:lightsaber_white",
+        "count": 1
+      },
+      "category": "weapons"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "formatVersion": 1,
+  "id": "lightsaber_mod",
+  "name": "Lightsaber Mod",
+  "description": "Ajoutez des sabres laser avec effets lumineux dynamiques à votre jeu Hytale ! Inclut 5 couleurs différentes, effets de particules, sons et animations de combat.",
+  "version": "1.0.0",
+  "author": "Claude AI",
+  "gameVersion": "1.0.*",
+  "dependencies": [],
+  "tags": ["weapons", "combat", "effects", "sci-fi"],
+  "icon": "assets/textures/icon.png",
+  "entryPoints": {
+    "pack": "data/pack.json",
+    "assets": "assets/"
+  },
+  "permissions": [
+    "items.create",
+    "effects.particles",
+    "effects.light",
+    "sounds.play",
+    "animations.custom"
+  ]
+}

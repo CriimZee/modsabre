@@ -1,0 +1,18 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:kyber_crystal_purple",
+  "displayName": "Cristal Kyber Violet",
+  "description": "Un cristal Kyber exceptionnellement rare. Équilibre entre lumière et obscurité.",
+  "category": "materials",
+  "subcategory": "rare",
+  "rarity": "mythic",
+  "stackSize": 16,
+  
+  "model": "models/kyber_crystal.blockymodel",
+  "textures": { "crystal": "textures/items/kyber_crystal_purple.png" },
+  
+  "lightEmission": {
+    "enabled": true, "color": [180, 0, 255], "intensity": 0.35, "radius": 2,
+    "flicker": { "enabled": true, "frequency": 0.18, "amplitude": 0.12 }
+  }
+}

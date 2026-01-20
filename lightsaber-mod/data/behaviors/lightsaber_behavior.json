@@ -1,0 +1,157 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_behavior",
+  "name": "Lightsaber Behavior",
+  "description": "Comportement principal des sabres laser",
+  
+  "input": {
+    "toggleActivation": {
+      "key": "USE_ITEM_SECONDARY",
+      "action": "toggle_state",
+      "targetState": ["inactive", "active"]
+    },
+    "attack": {
+      "key": "USE_ITEM_PRIMARY",
+      "action": "attack",
+      "condition": "state == active"
+    },
+    "block": {
+      "key": "USE_ITEM_SECONDARY",
+      "holdDuration": 0.2,
+      "action": "block",
+      "condition": "state == active"
+    }
+  },
+  
+  "onStateChange": {
+    "inactive_to_active": {
+      "playSound": "activate",
+      "playAnimation": "activate",
+      "startParticles": ["idle"],
+      "startLight": true,
+      "startIdleSound": true
+    },
+    "active_to_inactive": {
+      "playSound": "deactivate",
+      "playAnimation": "deactivate",
+      "stopParticles": ["idle"],
+      "stopLight": true,
+      "stopIdleSound": true
+    }
+  },
+  
+  "onAttack": {
+    "condition": "state == active",
+    "selectAnimation": {
+      "type": "combo",
+      "animations": ["attack_1", "attack_2", "attack_3"],
+      "comboWindow": 0.8,
+      "resetOnMiss": false
+    },
+    "playSound": "swing",
+    "spawnParticles": "swing",
+    "onHit": {
+      "playSound": "hit",
+      "spawnParticles": "hit",
+      "applyDamage": true,
+      "knockback": 0.3
+    },
+    "onClash": {
+      "condition": "target.item.type contains lightsaber",
+      "playSound": "clash",
+      "spawnParticles": {
+        "effect": "effects/lightsaber_clash.json",
+        "position": "contact_point",
+        "scale": 1.5
+      },
+      "cameraShake": {
+        "intensity": 0.3,
+        "duration": 0.2
+      }
+    }
+  },
+  
+  "onBlock": {
+    "condition": "state == active",
+    "playAnimation": "block",
+    "damageReduction": "item.combatMechanics.blockDamageReduction",
+    "onSuccessfulBlock": {
+      "spawnParticles": {
+        "effect": "effects/lightsaber_clash.json",
+        "position": "weapon_tip"
+      },
+      "playSound": "clash"
+    }
+  },
+  
+  "projectileDeflection": {
+    "enabled": true,
+    "condition": "state == active && isBlocking",
+    "chance": "item.combatMechanics.deflectChance",
+    "deflectAngle": {
+      "min": -45,
+      "max": 45
+    },
+    "onDeflect": {
+      "playSound": "clash",
+      "spawnParticles": {
+        "effect": "effects/lightsaber_clash.json",
+        "position": "weapon_blade"
+      }
+    }
+  },
+  
+  "lightDynamics": {
+    "baseIntensity": "item.lightEmission.intensity",
+    "swingIntensityBoost": 0.3,
+    "swingIntensityDuration": 0.15,
+    "hitIntensityBoost": 0.5,
+    "hitIntensityDuration": 0.1,
+    "idleFlicker": {
+      "enabled": "item.lightEmission.flicker.enabled",
+      "frequency": "item.lightEmission.flicker.frequency",
+      "amplitude": "item.lightEmission.flicker.amplitude"
+    }
+  },
+  
+  "visualEffects": {
+    "bladeGlow": {
+      "type": "additive",
+      "layers": [
+        {
+          "name": "core",
+          "color": [255, 255, 255],
+          "opacity": 1.0,
+          "width": 0.08
+        },
+        {
+          "name": "inner_glow",
+          "color": "item.lightEmission.color",
+          "opacity": 0.9,
+          "width": 0.15
+        },
+        {
+          "name": "outer_glow",
+          "color": "item.lightEmission.color",
+          "opacity": 0.4,
+          "width": 0.35,
+          "blur": true
+        }
+      ]
+    },
+    "motionBlur": {
+      "enabled": true,
+      "condition": "isSwinging",
+      "intensity": 0.6,
+      "samples": 8
+    },
+    "trailEffect": {
+      "enabled": true,
+      "condition": "isSwinging",
+      "color": "item.lightEmission.color",
+      "opacity": 0.7,
+      "fadeTime": 0.15,
+      "segments": 12
+    }
+  }
+}

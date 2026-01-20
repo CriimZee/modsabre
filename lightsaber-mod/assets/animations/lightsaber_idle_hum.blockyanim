@@ -1,0 +1,62 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_idle_hum",
+  "name": "Lightsaber Idle Hum",
+  "type": "item_animation",
+  
+  "animation": {
+    "length": 2.0,
+    "loop": true,
+    "blendIn": 0.2,
+    "blendOut": 0.2,
+    
+    "keyframes": {
+      "glow_intensity_multiplier": [
+        { "time": 0.0, "value": 1.0 },
+        { "time": 0.5, "value": 1.08 },
+        { "time": 1.0, "value": 0.95 },
+        { "time": 1.5, "value": 1.05 },
+        { "time": 2.0, "value": 1.0 }
+      ],
+      
+      "light_radius_multiplier": [
+        { "time": 0.0, "value": 1.0 },
+        { "time": 0.5, "value": 1.05 },
+        { "time": 1.0, "value": 0.98 },
+        { "time": 1.5, "value": 1.03 },
+        { "time": 2.0, "value": 1.0 }
+      ],
+      
+      "blade_distortion": [
+        { "time": 0.0, "value": 0.0 },
+        { "time": 0.25, "value": 0.01 },
+        { "time": 0.5, "value": -0.005 },
+        { "time": 0.75, "value": 0.008 },
+        { "time": 1.0, "value": -0.01 },
+        { "time": 1.25, "value": 0.006 },
+        { "time": 1.5, "value": -0.008 },
+        { "time": 1.75, "value": 0.005 },
+        { "time": 2.0, "value": 0.0 }
+      ],
+      
+      "item_rotation": [
+        { "time": 0.0, "value": [0, 0, 0] },
+        { "time": 1.0, "value": [0.5, 0.3, 0.2] },
+        { "time": 2.0, "value": [0, 0, 0] }
+      ]
+    },
+    
+    "noise": {
+      "glow_intensity": {
+        "enabled": true,
+        "amplitude": 0.03,
+        "frequency": 15.0
+      },
+      "blade_width": {
+        "enabled": true,
+        "amplitude": 0.005,
+        "frequency": 20.0
+      }
+    }
+  }
+}

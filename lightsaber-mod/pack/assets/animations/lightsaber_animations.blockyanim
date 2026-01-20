@@ -1,0 +1,213 @@
+{
+  "format_version": "1.0",
+  "animations": {
+    "lightsaber_activate": {
+      "duration": 0.4,
+      "loop": false,
+      "bones": {
+        "blade": {
+          "visibility": {
+            "0.0": false,
+            "0.05": true
+          },
+          "scale": {
+            "0.0": [1, 0, 1],
+            "0.1": [1, 0.3, 1],
+            "0.2": [1, 0.6, 1],
+            "0.3": [1, 0.85, 1],
+            "0.4": [1, 1, 1]
+          }
+        }
+      },
+      "sound_events": {
+        "0.0": {
+          "sound": "sounds/lightsaber_on",
+          "volume": 1.0
+        }
+      },
+      "particle_events": {
+        "0.0": {
+          "particle": "particles/lightsaber_ignite",
+          "locator": "blade_base"
+        }
+      }
+    },
+    
+    "lightsaber_deactivate": {
+      "duration": 0.3,
+      "loop": false,
+      "bones": {
+        "blade": {
+          "scale": {
+            "0.0": [1, 1, 1],
+            "0.1": [1, 0.7, 1],
+            "0.2": [1, 0.3, 1],
+            "0.3": [1, 0, 1]
+          },
+          "visibility": {
+            "0.0": true,
+            "0.3": false
+          }
+        }
+      },
+      "sound_events": {
+        "0.0": {
+          "sound": "sounds/lightsaber_off",
+          "volume": 1.0
+        }
+      }
+    },
+    
+    "lightsaber_idle": {
+      "duration": 2.0,
+      "loop": true,
+      "bones": {
+        "blade": {
+          "scale": {
+            "0.0": [1, 1, 1],
+            "0.5": [1.02, 1, 1.02],
+            "1.0": [1, 1, 1],
+            "1.5": [0.98, 1, 0.98],
+            "2.0": [1, 1, 1]
+          }
+        }
+      },
+      "sound_events": {
+        "0.0": {
+          "sound": "sounds/lightsaber_hum",
+          "volume": 0.5,
+          "loop": true
+        }
+      }
+    },
+    
+    "lightsaber_swing": {
+      "duration": 0.4,
+      "loop": false,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [-30, 0, 10],
+            "0.25": [45, 0, -20],
+            "0.4": [0, 0, 0]
+          }
+        },
+        "blade": {
+          "scale": {
+            "0.0": [1, 1, 1],
+            "0.15": [1.1, 1.05, 1.1],
+            "0.4": [1, 1, 1]
+          }
+        }
+      },
+      "sound_events": {
+        "0.05": {
+          "sound": "sounds/lightsaber_swing",
+          "volume": 0.8,
+          "pitch_variance": 0.1
+        }
+      },
+      "particle_events": {
+        "0.05": {
+          "particle": "particles/lightsaber_trail",
+          "follow_bone": "blade",
+          "duration": 0.3
+        }
+      }
+    },
+    
+    "lightsaber_hit": {
+      "duration": 0.2,
+      "loop": false,
+      "bones": {
+        "root": {
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.05": [0.5, 0, 0],
+            "0.1": [-0.3, 0, 0],
+            "0.2": [0, 0, 0]
+          }
+        }
+      },
+      "sound_events": {
+        "0.0": {
+          "sound": "sounds/lightsaber_hit",
+          "volume": 1.0,
+          "pitch_variance": 0.15
+        }
+      },
+      "particle_events": {
+        "0.0": {
+          "particle": "particles/lightsaber_sparks",
+          "locator": "blade_tip",
+          "count": 20
+        }
+      }
+    },
+    
+    "lightsaber_clash": {
+      "duration": 0.5,
+      "loop": false,
+      "bones": {
+        "root": {
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.05": [0, 0.5, -1],
+            "0.15": [0, 0, 0.3],
+            "0.3": [0, 0, 0]
+          },
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [10, 5, -5],
+            "0.3": [0, 0, 0]
+          }
+        },
+        "blade": {
+          "scale": {
+            "0.0": [1, 1, 1],
+            "0.05": [1.3, 1, 1.3],
+            "0.2": [1, 1, 1]
+          }
+        }
+      },
+      "sound_events": {
+        "0.0": {
+          "sound": "sounds/lightsaber_clash",
+          "volume": 1.2,
+          "pitch_variance": 0.1
+        }
+      },
+      "particle_events": {
+        "0.0": {
+          "particle": "particles/lightsaber_clash_sparks",
+          "locator": "clash_point",
+          "count": 50
+        },
+        "0.0": {
+          "particle": "particles/lightsaber_clash_flash",
+          "locator": "clash_point"
+        }
+      }
+    },
+    
+    "lightsaber_block": {
+      "duration": 0.3,
+      "loop": false,
+      "bones": {
+        "root": {
+          "rotation": {
+            "0.0": [0, 0, 0],
+            "0.1": [20, 30, 45],
+            "0.3": [20, 30, 45]
+          },
+          "position": {
+            "0.0": [0, 0, 0],
+            "0.1": [2, 3, -1],
+            "0.3": [2, 3, -1]
+          }
+        }
+      }
+    }
+  }
+}

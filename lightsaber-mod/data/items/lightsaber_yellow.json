@@ -1,0 +1,127 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_yellow",
+  "displayName": "Sabre Laser Jaune",
+  "description": "Un sabre laser jaune doré. Porté par les Sentinelles Jedi.",
+  "category": "weapons",
+  "subcategory": "melee",
+  "rarity": "legendary",
+  
+  "model": {
+    "inactive": "models/lightsaber_hilt.blockymodel",
+    "active": "models/lightsaber_yellow_active.blockymodel"
+  },
+  
+  "textures": {
+    "hilt": "textures/items/lightsaber_hilt.png",
+    "blade": "textures/items/blade_yellow.png",
+    "glow": "textures/effects/glow_yellow.png"
+  },
+  
+  "stats": {
+    "damage": 14,
+    "attackSpeed": 2.0,
+    "durability": -1,
+    "reach": 3.5
+  },
+  
+  "behavior": "behaviors/lightsaber_behavior.json",
+  
+  "states": {
+    "default": "inactive",
+    "available": ["inactive", "active"]
+  },
+  
+  "lightEmission": {
+    "enabled": true,
+    "condition": "state == active",
+    "color": [255, 220, 0],
+    "intensity": 1.3,
+    "radius": 9,
+    "flicker": {
+      "enabled": true,
+      "frequency": 0.08,
+      "amplitude": 0.12
+    }
+  },
+  
+  "particles": {
+    "idle": {
+      "effect": "effects/lightsaber_glow.json",
+      "condition": "state == active",
+      "color": [255, 230, 50],
+      "emissionRate": 28
+    },
+    "swing": {
+      "effect": "effects/lightsaber_trail.json",
+      "color": [255, 230, 50],
+      "trailLength": 0.45
+    },
+    "hit": {
+      "effect": "effects/lightsaber_clash.json",
+      "color": [255, 255, 200],
+      "sparks": true
+    }
+  },
+  
+  "sounds": {
+    "activate": {
+      "sound": "sounds/lightsaber_on.ogg",
+      "volume": 0.8,
+      "pitch": 1.1
+    },
+    "deactivate": {
+      "sound": "sounds/lightsaber_off.ogg",
+      "volume": 0.8,
+      "pitch": 1.1
+    },
+    "idle": {
+      "sound": "sounds/lightsaber_hum.ogg",
+      "volume": 0.4,
+      "pitch": 1.1,
+      "loop": true,
+      "condition": "state == active"
+    },
+    "swing": {
+      "sound": "sounds/lightsaber_swing.ogg",
+      "volume": 0.7,
+      "pitchVariance": 0.2
+    },
+    "hit": {
+      "sound": "sounds/lightsaber_hit.ogg",
+      "volume": 0.9,
+      "pitch": 1.05
+    },
+    "clash": {
+      "sound": "sounds/lightsaber_clash.ogg",
+      "volume": 1.0,
+      "pitch": 1.05,
+      "condition": "target.item.type contains lightsaber"
+    }
+  },
+  
+  "animations": {
+    "activate": "animations/lightsaber_activate.blockyanim",
+    "deactivate": "animations/lightsaber_deactivate.blockyanim",
+    "idle_active": "animations/lightsaber_idle_hum.blockyanim",
+    "attack_1": "animations/lightsaber_slash_fast_1.blockyanim",
+    "attack_2": "animations/lightsaber_slash_fast_2.blockyanim",
+    "attack_3": "animations/lightsaber_thrust_fast.blockyanim",
+    "block": "animations/lightsaber_block.blockyanim"
+  },
+  
+  "combatMechanics": {
+    "canBlock": true,
+    "blockDamageReduction": 0.8,
+    "canDeflectProjectiles": true,
+    "deflectChance": 0.7,
+    "comboEnabled": true,
+    "maxCombo": 5,
+    "specialAbility": {
+      "name": "Swift Justice",
+      "description": "Vitesse d'attaque augmentée après un blocage réussi",
+      "speedBoostDuration": 3.0,
+      "speedBoostMultiplier": 1.25
+    }
+  }
+}

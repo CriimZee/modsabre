@@ -1,0 +1,76 @@
+{
+  "formatVersion": 1,
+  "identifier": "lightsaber_mod:lightsaber_thrust",
+  "name": "Lightsaber Thrust",
+  "type": "item_animation",
+  
+  "animation": {
+    "length": 0.5,
+    "loop": false,
+    "blendIn": 0.05,
+    "blendOut": 0.15,
+    
+    "keyframes": {
+      "arm_right_rotation": [
+        { "time": 0.0, "value": [-15, 25, 20] },
+        { "time": 0.1, "value": [-35, 40, -10] },
+        { "time": 0.2, "value": [15, -10, 5] },
+        { "time": 0.35, "value": [10, -5, 3] },
+        { "time": 0.5, "value": [0, 0, 0] }
+      ],
+      
+      "arm_right_position": [
+        { "time": 0.0, "value": [-0.15, 0, 0.25] },
+        { "time": 0.1, "value": [-0.2, 0.1, -0.1] },
+        { "time": 0.2, "value": [0.1, -0.05, 0.5] },
+        { "time": 0.35, "value": [0.05, 0, 0.4] },
+        { "time": 0.5, "value": [0, 0, 0] }
+      ],
+      
+      "item_rotation": [
+        { "time": 0.0, "value": [-20, 0, 60] },
+        { "time": 0.1, "value": [-45, 0, 0] },
+        { "time": 0.2, "value": [0, 0, 0] },
+        { "time": 0.5, "value": [0, 0, 0] }
+      ],
+      
+      "body_rotation": [
+        { "time": 0.0, "value": [0, -25, 0] },
+        { "time": 0.1, "value": [5, -35, 0] },
+        { "time": 0.2, "value": [-5, 15, 0] },
+        { "time": 0.5, "value": [0, 0, 0] }
+      ],
+      
+      "body_position": [
+        { "time": 0.0, "value": [0, 0, 0] },
+        { "time": 0.1, "value": [0, 0, -0.1] },
+        { "time": 0.2, "value": [0, 0, 0.3] },
+        { "time": 0.5, "value": [0, 0, 0] }
+      ],
+      
+      "glow_intensity_multiplier": [
+        { "time": 0.0, "value": 1.0 },
+        { "time": 0.18, "value": 1.6 },
+        { "time": 0.35, "value": 1.0 }
+      ]
+    },
+    
+    "trail": {
+      "enabled": true,
+      "startTime": 0.12,
+      "endTime": 0.25
+    },
+    
+    "hitbox": {
+      "active": true,
+      "startTime": 0.17,
+      "endTime": 0.25,
+      "type": "line",
+      "length": 3.5
+    },
+    
+    "events": [
+      { "time": 0.12, "type": "sound", "sound": "swing" }
+    ]
+  }
+}

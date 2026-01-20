@@ -1,0 +1,21 @@
+{
+  "format_version": 1,
+  "pack": {
+    "id": "lightsaber_mod",
+    "name": "Lightsaber Mod",
+    "description": "Adds lightsabers with dynamic lighting effects to Hytale!",
+    "version": "1.0.0",
+    "authors": ["Claude AI"],
+    "website": "https://github.com/lightsaber-mod",
+    "dependencies": [],
+    "game_version": "0.1.*"
+  },
+  "content": {
+    "items": "behaviors/items/*.json",
+    "models": "assets/models/*.blockymodel",
+    "textures": "assets/textures/**/*.png",
+    "sounds": "assets/sounds/*.json",
+    "particles": "assets/particles/*.json",
+    "animations": "assets/animations/*.blockyanim"
+  }
+}
